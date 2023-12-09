@@ -13,6 +13,18 @@ body {
   gap: 8px;
 }
 
+h1{
+  color: white;
+}
+
+li{
+  color: white;
+}
+
+p{
+  color: white;
+}
+
 /* Original Code CSS
 
   :root {
