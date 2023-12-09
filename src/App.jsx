@@ -1,46 +1,37 @@
-// Funcionalidad
-import { useState } from 'react'
-
-// Estetica
-import './App.css'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useFetch } from "./useFetch";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {data} = useFetch("https://jsonplaceholder.typicode.com/users")
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <div className="title">
+        <h1>Getch like a pro</h1>
       </div>
-      <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <ul>
+          {data?.map((user) => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
       </div>
-
-      <div className="card">
-        <h3>creando botones</h3>
-          <button>
-            Personal Botton1
-          </button>
-      </div>
-        
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
+
+/*
+
+  Un componente es  una factoria de elementos
+  una funcion que al ejecutar te devuelve un elemento
+
+  El elemento es lo que renderiza react
+
+  Nunca jamas modificar o mutar una prop
+
+  // Agregar [] al final hace que se ejecute una uncia vez
+    // aplicando el metodo (IIFE - Expresión de Función Invocada Inmediatamente)
+
+*/
