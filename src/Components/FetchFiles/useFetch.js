@@ -14,7 +14,7 @@ export function useFetch(url) {
       .catch((error) => setError(error)) // Captura el error => La setea y incluye en el estado.
       .finally(() => setLoading(false)) // Cambia el estado de carga a falso, Con o Sin Exito
   }, [url]);
-  // [] || [url]); Sin url Ejecuta 1 vez Cuando se monte el componente, Con url Ejecuta cada vez que cambie url
+  // [] o [url]); Sin url Ejecuta 1 vez, Cuando se monte el componente. Con url Ejecuta cada vez que cambie url
   
   // Retornar Los datos de los Hooks.
   return {data, loading, error}

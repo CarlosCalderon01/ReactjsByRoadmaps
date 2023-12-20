@@ -28,14 +28,3 @@ export function App () {
 }
 
 export default App
-
-/*
-
-  Un componente es  una factoria de elementos
-  una funcion que al ejecutar te devuelve un elemento
-
-  El elemento es lo que renderiza react
-
-  Nunca jamas modificar o mutar una prop
-
-*/

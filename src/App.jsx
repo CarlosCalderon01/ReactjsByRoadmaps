@@ -1,4 +1,4 @@
-import { useFetch } from "./useFetch";
+import { useFetch } from "./Components/FetchFiles/useFetch";
 import "./App.css";
 
 function App() {
@@ -23,17 +23,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-  Un componente es  una factoria de elementos
-  una funcion que al ejecutar te devuelve un elemento
-
-  El elemento es lo que renderiza react
-
-  Nunca jamas modificar o mutar una prop
-
-  // Agregar [] al final hace que se ejecute una uncia vez
-    // aplicando el metodo (IIFE - Expresión de Función Invocada Inmediatamente)
-
-*/

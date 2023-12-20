@@ -13,16 +13,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 
 /*
-  Elemento DOM --> document.getElementById('root')
-  tronco del arbol --> ReactDOM.createRoot
-  Todo lo que este dentro de la App son los elementos
 
-  en react no se puede renderizar html.
-    primero debo crear el elemento luego renderizarlo
+Apuntes -->
+  + Root -> Es el tronco dela rbol que alberga todos los elementos. (ReactDOM.createRoot)
+  + Componente -> Es una factoria de elementos.
+  + Funcion -> Devuelve un elemento
+  + Elemento -> Es lo que renderiza react
+    - Todo lo que este dentro de la App, son los elementos.
+    - en react no se puede renderizar html
+    - primero debo crear el elemento luego renderizarlo
 
-  Root --> en react se generan un arbol de elementos
+Example -->
+  + const appDomElement = document.getElementById('app')
+  + const root = ReactDOM.createRoot(appDomElement)
 
-    const appDomElement = document.getElementById('app)
-    const root = ReactDOM.createRoot(appDomElement)
+Good Practice -->
+  - Nunca jamas modificar o mutar una prop
 
 */
