@@ -1,14 +1,15 @@
 // Libreria
 import React from "react";
 import ReactDOM from "react-dom/client";
-// Funcionalidad
-import App from "./App.jsx";
 // Estilos
 import "./index.css";
+// Funcionalidad
+import App1 from "./App1.jsx";
+// import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <App1 />
   </React.StrictMode>
 );
 
