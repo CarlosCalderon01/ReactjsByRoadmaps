@@ -1,7 +1,6 @@
-// About.js
-const About = () => (
+export const About = () => (
   <div>
-    <h2>About</h2>
+    <h2>Pages About!</h2>
     <p>Esta es la página de información sobre nosotros.</p>
   </div>
 );
