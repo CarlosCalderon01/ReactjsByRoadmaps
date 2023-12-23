@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import { fetchData } from "./Components/FetchFiles/fetchData";
 import "./App.css";
 
+import { LimitTopicComp } from "./Components/LimitTopicComp";
+
 const apiData = fetchData("https://jsonplaceholder.typicode.com/users")
 
 function App1() {
@@ -9,16 +11,14 @@ function App1() {
 
   return (
     <div className="App">
-      <div className="title">
+      <LimitTopicComp mensaje = "API Calls - SWR" / >
         <h1>Getch like a PRO With Render-as-you-Fetch - Suspense</h1>
-        <Suspense fallback={<div>Loading...</div>}> 
+        <Suspense fallback={<div> Loading... </div>}> 
           <ul className="card">
-            {data?.map((user) => (
-              <li key={user.id}>{user.name}</li>
-            ))}
+            {data?.map((user) => (<li key={user.id}>{user.name}</li>))}
           </ul>
         </Suspense>
-      </div>
+      <LimitTopicComp mensaje = "API Calls - SWR" / >
     </div>
   );
 }
