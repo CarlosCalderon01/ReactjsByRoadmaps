@@ -1,42 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
-export function useFetch(url) {
-
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [controller, setController] = useState(null);
+export function useFetch (url) {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [controller, setController] = useState(null)
 
   useEffect(() => {
-    const abortController = new AbortController();
-    setController(abortController);
-    setLoading(true);
+    const abortController = new AbortController()
+    setController(abortController)
+    setLoading(true)
     fetch(url, { signal: abortController.signal }) // rastreador a la petecion para poder controlarlo
       .then((Response) => Response.json()) // Recibe promesa => transforma en JSON
       .then((data) => setData(data)) // Recibe data => La setea y incluye en el estado.
       .catch((error) => {
-        if(error.name === "AbortError"){
-          console.log("Request Cancelled");
+        if (error.name === 'AbortError') {
+          console.log('Request Cancelled')
         } else {
           setError(error)
         }
-      }  
-    ) // Captura el error => La setea y incluye en el estado.
+      }
+      ) // Captura el error => La setea y incluye en el estado.
       .finally(() => setLoading(false)) // Cambia el estado de carga a falso, Con o Sin Exito
 
-    return () => abortController.abort(); // Se ejecuta Auto Cuando componente sea desmontado
-  }, [url]);
+    return () => abortController.abort() // Se ejecuta Auto Cuando componente sea desmontado
+  }, [url])
   // [] o [url]); Sin url Ejecuta 1 vez, Cuando se monte el componente. Con url Ejecuta cada vez que cambie url
-  
+
   const handleCancelRequest = () => {
     if (controller) {
-      controller.abort();
-      setError("request Cancelled");
+      controller.abort()
+      setError('request Cancelled')
     }
   }
 
   // Retornar Los datos de los Hooks.
-  return {data, loading, error, handleCancelRequest}
+  return { data, loading, error, handleCancelRequest }
 }
 
 /*

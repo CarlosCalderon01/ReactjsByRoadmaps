@@ -1,40 +1,40 @@
-function getSuspender(promise) {
-    let status = "pending";
-    let response; // resp del resultado final
+function getSuspender (promise) {
+  let status = 'pending'
+  let response // resp del resultado final
 
-    // Resolviendo promesa -->
-    const suspender = promise.then(
-        (res) => {
-            status = "success";
-            response = res;
-        },
-        (err) => {
-            status = "Error";
-            response = err;
-        }
-    );
-
-    // funcion para leer el estado
-    const read = ()=>{
-        switch(status) {
-            case "pending":
-                throw suspender;
-            case "error":
-                throw response;
-            default:
-                return response;
-        }
+  // Resolviendo promesa -->
+  const suspender = promise.then(
+    (res) => {
+      status = 'success'
+      response = res
+    },
+    (err) => {
+      status = 'Error'
+      response = err
     }
-    return {read} // Devuelva la func read
+  )
+
+  // funcion para leer el estado
+  const read = () => {
+    switch (status) {
+      case 'pending':
+        throw suspender
+      case 'error':
+        throw response
+      default:
+        return response
+    }
+  }
+  return { read } // Devuelva la func read
 }
 
-export function fetchData(url) {
-    const promise = fetch(url) // en un obj promise se guarda la resp del fetch
-      .then((Response) => Response.json()) // Recibe resp(Promise) => transforma en JSON
-      .then((data) => data)
-    
-    return getSuspender(promise) // get Resp and send Promise to function
-} 
+export function fetchData (url) {
+  const promise = fetch(url) // en un obj promise se guarda la resp del fetch
+    .then((Response) => Response.json()) // Recibe resp(Promise) => transforma en JSON
+    .then((data) => data)
+
+  return getSuspender(promise) // get Resp and send Promise to function
+}
 
 /*
 
