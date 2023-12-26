@@ -1,5 +1,7 @@
-// Componente Final
-import { useState } from 'react'
+// dependency - third
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+// dependency - Local
 
 export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
@@ -14,7 +16,7 @@ export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
   const handleClick = () => {
     setIsFollowing(!isFollowing)
   }
- 
+
   return (
     <article className='tw-followCard'>
       <header className='tw-followCard-header'>
@@ -35,6 +37,16 @@ export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
           <span className='tw-followCard-stopFollow'>Dejar de seguir</span>
         </button>
       </aside>
+      <p>
+      </p>
     </article>
   )
 }
+
+TwitterFollowCard.propTypes = {
+  children: PropTypes.any.isRequired,
+  userName: PropTypes.string.isRequired,
+  initialIsFollowing: PropTypes.bool.isRequired
+}
+
+export default TwitterFollowCard

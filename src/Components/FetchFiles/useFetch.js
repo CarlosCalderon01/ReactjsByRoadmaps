@@ -1,4 +1,6 @@
+// dependency - third
 import { useState, useEffect } from 'react'
+// dependency - Local
 
 export function useFetch (url) {
   const [data, setData] = useState(null)

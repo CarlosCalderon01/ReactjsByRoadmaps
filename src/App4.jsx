@@ -1,6 +1,7 @@
-// Dependencias de Terceros
+// dependency - third
+import React from 'react'
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'
-// Dependencias Locales
+// dependency - Local
 import { Homes } from './page/Homes'
 import { Notes } from './page/Notes'
 import { Users } from './page/Users'

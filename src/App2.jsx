@@ -1,28 +1,29 @@
-// App.js
-import React from 'react';
-import Home from './page/Home';
-import About from './page/About';
+// dependency - third
+import React from 'react'
+// dependency - Local
+import Home from './page/Home'
+import About from './page/About'
 
 export class App2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { route: window.location.hash.substr(1) };
+  constructor (props) {
+    super(props)
+    this.state = { route: window.location.hash.substr(1) }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('hashchange', () => {
-      this.setState({ route: window.location.hash.substr(1) });
-    });
+      this.setState({ route: window.location.hash.substr(1) })
+    })
   }
 
-  render() {
-    let Component;
+  render () {
+    let Component
     switch (this.state.route) {
       case '/about':
-        Component = About;
-        break;
+        Component = About
+        break
       default:
-        Component = Home;
+        Component = Home
     }
 
     return (
@@ -37,8 +38,8 @@ export class App2 extends React.Component {
           <Component />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App2;
+export default App2

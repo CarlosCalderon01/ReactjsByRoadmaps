@@ -1,7 +1,9 @@
-import './App.css' // Importar Estilos
-import { TwitterFollowCard } from './TwitterFollowCard.jsx' // Importar Componente
+// dependency - third
+import React from 'react'
+// dependency - Local
+import { TwitterFollowCard } from './TwitterFollowCard.jsx'
+import './App.css'
 
-// Arreglo de usuarios compuesto por objetos
 const users = [
 
 ]

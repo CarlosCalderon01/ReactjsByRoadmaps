@@ -1,8 +1,11 @@
-import { useFetch } from "./Components/FetchFiles/useFetch";
-import "./App.css";
+// dependency - third
+import React from 'react'
+// dependency - Local
+import { useFetch } from './Components/FetchFiles/useFetch'
+import './App.css'
 
-function App() {
-  const {data, loading, error, handleCancelRequest} = useFetch("https://jsonplaceholder.typicode.com/users")
+function App () {
+  const { data, loading, error, handleCancelRequest } = useFetch('https://jsonplaceholder.typicode.com/users')
 
   return (
     <div className="App">
@@ -22,7 +25,7 @@ function App() {
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
