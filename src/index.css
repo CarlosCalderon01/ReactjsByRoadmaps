@@ -25,6 +25,12 @@ p{
   color: white;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
 /* Original Code CSS
 
   :root {

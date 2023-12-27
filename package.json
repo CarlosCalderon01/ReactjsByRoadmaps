@@ -31,5 +31,10 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "prettier": "^3.1.1",
     "vite": "^5.0.0"
-  }
+  },
+  "description": "https://roadmap.sh/react?s=645ab341f3d9ecfa51d91427",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
