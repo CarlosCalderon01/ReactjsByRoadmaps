@@ -9,12 +9,13 @@ const Notes = () => <h1>Notes Page!</h1>
 const Users = () => <h1>Users Page!</h1>
 // CSS rapido del contenido
 const inlineStyle = {
-  padding: 5
+  padding: 5,
 }
 // Aplicacion principal
-function App3 () {
+function App3() {
   // Lector actual usando useState
-  const [page, setPage] = useState(() => { // 1. Leeme esto Y
+  const [page, setPage] = useState(() => {
+    // 1. Leeme esto Y
     const { pathname } = window.location
     const page = pathname.slice(1)
     return page
@@ -22,7 +23,8 @@ function App3 () {
 
   // Escuchar cuando cambia la ruta - a base de useState de react
   const getContent = () => {
-    if (page === 'users') { // 2. Si la apgina esta
+    if (page === 'users') {
+      // 2. Si la apgina esta
       return <Users /> // 3. rederizame Esto
     } else if (page === 'notes') {
       return <Notes />
@@ -31,7 +33,7 @@ function App3 () {
     }
   }
 
-  const toPage = page => event => {
+  const toPage = (page) => (event) => {
     history.pushState(null, '', `/${page}`) // estado del histori no de react. (null, 'titulo', `/${direccion}`)
     event.prevenDeafault()
     setPage(page)
@@ -39,12 +41,18 @@ function App3 () {
 
   return (
     <div>
-        <header>
-            <a href="#" onClick={toPage('home')} style= {inlineStyle}>Home</a>
-            <a href="#" onClick={toPage('notes')} style= {inlineStyle}>Notes</a>
-            <a href="#" onClick={toPage('users')} style= {inlineStyle}>Users</a>
-        </header>
-        {getContent()}
+      <header>
+        <a href="#" onClick={toPage('home')} style={inlineStyle}>
+          Home
+        </a>
+        <a href="#" onClick={toPage('notes')} style={inlineStyle}>
+          Notes
+        </a>
+        <a href="#" onClick={toPage('users')} style={inlineStyle}>
+          Users
+        </a>
+      </header>
+      {getContent()}
     </div>
   )
 }

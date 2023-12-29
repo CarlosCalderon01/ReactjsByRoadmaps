@@ -9,26 +9,34 @@ import { About } from './page/About'
 import './App.css'
 
 const inlineStyle = {
-  padding: 5
+  padding: 5,
 }
 
-function App4 () {
+function App4() {
   return (
     <div>
-        <BrowserRouter>
-            <header>
-                <Link to="/" style= {inlineStyle}>Homes</Link>
-                <Link to="/notes" style= {inlineStyle}>Notes</Link>
-                <Link to="/users" style= {inlineStyle}>Users</Link>
-                <Link to="/about" style= {inlineStyle}>About</Link>
-            </header>
-            <Routes>
-                <Route path="/" element={<Homes />} />
-                <Route path="/notes" element={<Notes />} />
-                <Route path="/users" element={<Users />} />
-                <Route path="/about" element={<About />} />
-            </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <header>
+          <Link to="/" style={inlineStyle}>
+            Homes
+          </Link>
+          <Link to="/notes" style={inlineStyle}>
+            Notes
+          </Link>
+          <Link to="/users" style={inlineStyle}>
+            Users
+          </Link>
+          <Link to="/about" style={inlineStyle}>
+            About
+          </Link>
+        </header>
+        <Routes>
+          <Route path="/" element={<Homes />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

@@ -3,14 +3,16 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 // dependency - Local
 
-export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
+export function TwitterFollowCard({ children, userName, initialIsFollowing }) {
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
   console.log('[TwitterFollowCard] render with userName: ', userName)
 
   // texto depende si {"isFollowing" ? verdad : falso}
   const text = isFollowing ? 'Siguiendo' : 'Seguir'
-  const buttonClassName = isFollowing ? 'tw-followCard-button is-following' : 'tw-followCard-button'
+  const buttonClassName = isFollowing
+    ? 'tw-followCard-button is-following'
+    : 'tw-followCard-button'
 
   // Botton para cambiar estado
   const handleClick = () => {
@@ -18,27 +20,26 @@ export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
   }
 
   return (
-    <article className='tw-followCard'>
-      <header className='tw-followCard-header'>
+    <article className="tw-followCard">
+      <header className="tw-followCard-header">
         <img
-          className='tw-followCard-avatar'
-          alt='El avatar de midudev'
+          className="tw-followCard-avatar"
+          alt="El avatar de midudev"
           src={`https://unavatar.io/${userName}`}
         />
-        <div className='tw-followCard-info'>
+        <div className="tw-followCard-info">
           <strong>{children}</strong>
-          <span className='tw-followCard-infoUserName'>@{userName}</span>
+          <span className="tw-followCard-infoUserName">@{userName}</span>
         </div>
       </header>
 
       <aside>
         <button className={buttonClassName} onClick={handleClick}>
-          <span className='tw-followCard-text'>{text}</span>
-          <span className='tw-followCard-stopFollow'>Dejar de seguir</span>
+          <span className="tw-followCard-text">{text}</span>
+          <span className="tw-followCard-stopFollow">Dejar de seguir</span>
         </button>
       </aside>
-      <p>
-      </p>
+      <p></p>
     </article>
   )
 }
@@ -46,7 +47,7 @@ export function TwitterFollowCard ({ children, userName, initialIsFollowing }) {
 TwitterFollowCard.propTypes = {
   children: PropTypes.any.isRequired,
   userName: PropTypes.string.isRequired,
-  initialIsFollowing: PropTypes.bool.isRequired
+  initialIsFollowing: PropTypes.bool.isRequired,
 }
 
 export default TwitterFollowCard

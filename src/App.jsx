@@ -4,14 +4,11 @@ import React from 'react'
 import './App.css'
 import Menu from './Components/Menu'
 
-function App () {
+function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <Menu>
-      </Menu>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Menu></Menu>
     </div>
   )
 }

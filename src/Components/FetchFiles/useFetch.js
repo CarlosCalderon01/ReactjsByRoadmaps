@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 // dependency - Local
 
-export function useFetch (url) {
+export function useFetch(url) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -21,8 +21,7 @@ export function useFetch (url) {
         } else {
           setError(error)
         }
-      }
-      ) // Captura el error => La setea y incluye en el estado.
+      }) // Captura el error => La setea y incluye en el estado.
       .finally(() => setLoading(false)) // Cambia el estado de carga a falso, Con o Sin Exito
 
     return () => abortController.abort() // Se ejecuta Auto Cuando componente sea desmontado

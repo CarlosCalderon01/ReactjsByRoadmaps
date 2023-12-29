@@ -4,16 +4,15 @@ import React from 'react'
 import { TwitterFollowCard } from './TwitterFollowCard.jsx'
 import './App.css'
 
-const users = [
+const users = []
 
-]
-
-// 
-export function App () {
+//
+export function App() {
   return (
     // Extraccion de datos
-    <section className='App'>
-      { // recorrer cada usuario users.map
+    <section className="App">
+      {
+        // recorrer cada usuario users.map
         users.map(({ userName, name, isFollowing }) => (
           // Invocar componente <carta: parametros>
           <TwitterFollowCard

@@ -5,18 +5,18 @@ import Home from './page/Home'
 import About from './page/About'
 
 export class App2 extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { route: window.location.hash.substr(1) }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('hashchange', () => {
       this.setState({ route: window.location.hash.substr(1) })
     })
   }
 
-  render () {
+  render() {
     let Component
     switch (this.state.route) {
       case '/about':
@@ -30,8 +30,12 @@ export class App2 extends React.Component {
       <div>
         <header>
           <ul>
-            <li><a href="#/">Home</a></li>
-            <li><a href="#/about">About</a></li>
+            <li>
+              <a href="#/">Home</a>
+            </li>
+            <li>
+              <a href="#/about">About</a>
+            </li>
           </ul>
         </header>
         <div>

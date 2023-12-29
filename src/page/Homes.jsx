@@ -1,8 +1,10 @@
-export const Homes = () => (
-    <div>
-        <h2>Pages Homes!</h2>
-        <p>Bienvenido a la página de inicio.</p>
-    </div>
-);
+import React from 'react'
 
-export default Homes;
+export const Homes = () => (
+  <div>
+    <h2>Pages Homes!</h2>
+    <p>Bienvenido a la página de inicio.</p>
+  </div>
+)
+
+export default Homes

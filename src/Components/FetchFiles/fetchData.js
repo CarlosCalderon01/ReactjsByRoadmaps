@@ -1,4 +1,4 @@
-function getSuspender (promise) {
+function getSuspender(promise) {
   let status = 'pending'
   let response // resp del resultado final
 
@@ -11,7 +11,7 @@ function getSuspender (promise) {
     (err) => {
       status = 'Error'
       response = err
-    }
+    },
   )
 
   // funcion para leer el estado
@@ -28,7 +28,7 @@ function getSuspender (promise) {
   return { read } // Devuelva la func read
 }
 
-export function fetchData (url) {
+export function fetchData(url) {
   const promise = fetch(url) // en un obj promise se guarda la resp del fetch
     .then((Response) => Response.json()) // Recibe resp(Promise) => transforma en JSON
     .then((data) => data)

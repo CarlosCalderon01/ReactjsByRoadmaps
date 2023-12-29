@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types' // Lib. para validar.
 // dependency - Local
 
-export function LimitTopicComp ({ mensaje }) {
+export function LimitTopicComp({ mensaje }) {
   /*  // Vanilla para validar --> (NO RECOMMEND!).
     if (typeof mensaje !== 'string') {
       console.error("Warning: 'mensaje' prop should be a string");
@@ -17,7 +17,7 @@ export function LimitTopicComp ({ mensaje }) {
 }
 
 LimitTopicComp.propTypes = {
-  mensaje: PropTypes.string.isRequired // Lib. PropTypes --> (RECOMMEND!).
+  mensaje: PropTypes.string.isRequired, // Lib. PropTypes --> (RECOMMEND!).
 }
 
 export default LimitTopicComp
