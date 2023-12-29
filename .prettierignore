@@ -1,1 +1,17 @@
-node_modules
+# Ignorar todos los archivos en la carpeta "node_modules"
+node_modules/
+
+# Ignorar archivos que tienen una extensión específica
+*.log
+*.md
+
+# Ignorar archivos o carpetas específicos
+build/
+dist/
+coverage/
+
+# Ignorar archivos específicos en una carpeta
+src/generated/
+
+# Ignorar archivos en la raíz del proyecto
+.eslintcache

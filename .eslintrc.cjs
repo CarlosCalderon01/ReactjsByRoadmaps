@@ -4,9 +4,8 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'plugin:react/recommended',
     'standard',
-    'prettier'
+    'plugin:react/recommended'
   ],
   overrides: [
     {
@@ -37,6 +36,8 @@ module.exports = {
     'react'
   ],
   rules: {
+    'space-before-function-paren': 'off',
+    'comma-dangle': 'off'
     // 'react/react-in-jsx-scope': RULES.OFF // como SOBRE ESCRIBIR mi regla por ensima de ESLINT
   }
 }
